@@ -1,0 +1,16 @@
+{
+  "info": {
+    "title": "Class Website",
+    "description": "This website serves as a hub for class-related information, resources, and updates.",
+    "contact": {
+      "email": "contact@classwebsite.com",
+      "phone": "+1234567890"
+    },
+    "socialMedia": {
+      "facebook": "https://facebook.com/classwebsite",
+      "twitter": "https://twitter.com/classwebsite",
+      "instagram": "https://instagram.com/classwebsite"
+    },
+    "terms": "All rights reserved. Content may not be reproduced without permission."
+  }
+}
