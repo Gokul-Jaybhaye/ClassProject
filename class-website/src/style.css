@@ -57,7 +57,7 @@
 
   /* Background image */
   
-  background-image: url("../images/backgrounds.png");
+  background-image: url("assets/images/backgrounds.png");
   background-size: cover;
   background-position: center;
 }
