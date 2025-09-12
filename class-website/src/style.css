@@ -46,19 +46,41 @@
     }
 
     /* Hero Section */
-    .hero {
-      background: url('https://images.unsplash.com/photo-1588075592446-49b85a162ba2') no-repeat center center/cover;
-      height: 80vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 20px;
-      position: relative;
-    }
+  .hero {
+  position: relative;
+  height: 90vh; /* almost full screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
 
-    .hero::after {
+  /* Background image */
+  
+  background-image: url("../images/backgrounds.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Dark overlay */
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* black with 50% opacity */
+  z-index: 1;
+}
+
+/* Content should be above overlay */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+.hero::after {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -167,6 +189,25 @@
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+
+/* Show menu when active */
+/*drop down menu*/
+/* Hide dropdown */
+.dropdown {
+  display: none;
+  position: absolute; /* so it floats below */
+  list-style: none;
+  background: white;
+  padding: 10px;
+  margin: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Show on hover */
+nav ul li:hover > .dropdown {
+  display: block;
+}
+
 
 .mobile-menu.show {
   display: flex;

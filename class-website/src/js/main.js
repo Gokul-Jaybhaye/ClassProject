@@ -8,6 +8,7 @@ function toggleMenu() {
     }
 }
 
-// Accessibility: allow hamburger menu to open with keyboard
-document.addEventListener('DOMContentLoaded', function () {
-    const
+document.querySelector("nav ul li a[href='#']").addEventListener("click", function(e) {
+  e.preventDefault(); // prevent default link click
+  this.nextElementSibling.classList.toggle("show"); // toggle dropdown
+});
