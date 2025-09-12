@@ -7,23 +7,69 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Our Class Website</h1>
-    </header>
+    <!-- Navbar -->
+    <nav>
+        <!-- Hamburger Icon (accessible) -->
+        <div class="hamburger" onclick="toggleMenu()" role="button" aria-label="Open navigation menu" tabindex="0">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu" style="display:none;">
+            <a href="#">Home</a>
+            <a href="#">Classes</a>
+            <a href="#">Weekly Test</a>
+            <a href="#">Monthly Topper</a>
+            <a href="#">Attendance</a>
+            <a href="#">Revision</a>
+            <a href="#">Gallery</a>
+            <a href="#">Login</a>
+            <a href="contact.html">Contact Us</a> 
+        </div>
+
+        <div class="logo">Classic</div>
+        <ul class="desktop-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Weekly Test</a></li>
+            <li><a href="#">Monthly Topper</a></li>
+            <li><a href="#">Attendance</a></li>
+            <li><a href="#">Revision</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Hero -->
     <section class="hero">
-        <h2>Hero Section</h2>
-        <p>Discover our classes, resources, and more!</p>
-    </section>
-    <section class="highlights">
-        <h2>Highlights</h2>
-        <div class="youtube-embed">
-            <h3>Featured Video</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/example" frameborder="0" allowfullscreen></iframe>
+        <div class="hero-content">
+            <h1>Shaping Bright Minds,<br> One Step at a Time</h1>
+            <p>Weekly Tests · Revision · Results · Achievements</p>
+            <button class="btn">Join Now</button>
         </div>
     </section>
-    <footer>
-        <p>&copy; 2023 Class Website. All rights reserved.</p>
-    </footer>
-    <script src="assets/js/main.js"></script>
-</body>
-</html>
+    <!-- Fixed typo: added '<' to section tag -->
+    <section class="youtube">
+        <h2>YouTube Embed Section</h2>
+        <div class="videos">
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen title="Latest classes"></iframe>
+                <p>Latest classes</p>
+            </div>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" allowfullscreen title="Revision"></iframe>
+                <p>Revision</p>
+            </div>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ" allowfullscreen title="Toppers' tips"></iframe>
+                <p>Toppers' tips</p>
+            </div>
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen title="Science experiments"></iframe>
+                <p>Science experiments</p>
+            </div>
+        </div>
+       

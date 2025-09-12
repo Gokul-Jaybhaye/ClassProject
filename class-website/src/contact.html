@@ -3,37 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Contact Us | Class Website</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
-    <header>
-        <h1>Contact Us</h1>
-    </header>
+    <nav>
+        <!-- ...existing navbar code... -->
+    </nav>
     <main>
-        <section>
-            <h2>Get in Touch</h2>
-            <form action="#" method="post">
-                <label for="name">Name:</label>
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <form class="contact-form" action="#" method="post">
+                <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="message">Message:</label>
+                <label for="message">Message</label>
                 <textarea id="message" name="message" required></textarea>
 
                 <button type="submit">Send Message</button>
             </form>
-        </section>
-        <section>
-            <h2>Our Location</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509123!2d144.9537353153154!3d-37.81627997975169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11f3b3%3A0x5045675218ceed0!2sYour%20Location!5e0!3m2!1sen!2sau!4v1616161616161!5m2!1sen!2sau" 
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </section>
+            <div class="contact-info">
+                <p>Email: info@classwebsite.com</p>
+                <p>Phone: +91 12345 67890</p>
+                <p>Address: 123, Main Street, Your City</p>
+            </div>
+            <div class="contact-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019019813585!2d144.9630579153169!3d-37.81410797975159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f1f1f1%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sin!4v1614030123456!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="250" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Location Map"></iframe>
+            </div>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2023 Your Class Website</p>
+        <p>&copy; 2023 Class Website. All rights reserved.</p>
     </footer>
     <script src="assets/js/main.js"></script>
 </body>

@@ -1,0 +1,137 @@
+/* Contact Page Styles */
+.contact-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 32px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+.contact-container h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #2d3e50;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-form label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #34495e;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px 12px;
+    border: 1px solid #dbe2e8;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f8fafc;
+    resize: vertical;
+}
+
+.contact-form textarea {
+    min-height: 100px;
+}
+
+.contact-form button {
+    background: #2d89ef;
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.contact-form button:hover {
+    background: #1b5fa7;
+}
+
+.contact-info {
+    margin-top: 32px;
+    text-align: center;
+    color: #555;
+}
+
+.contact-map {
+    margin-top: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+}
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 8px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.95rem;
+        padding: 8px 8px;
+    }
+    .contact-form button {
+        font-size: 0.95rem;
+        padding: 8px 0;
+    }
+
+}
+
+/* Animated CSS for contact page elements */
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-container {
+    animation: fadeInUp 0.8s ease;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    opacity: 0;
+    animation: fadeInUp 0.7s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.contact-form input {
+    animation-delay: 0.4s;
+}
+.contact-form textarea {
+    animation-delay: 0.5s;
+}
+.contact-form button {
+    animation-delay: 0.6s;
+}
+
+/* Button hover bounce */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(-6px);}
+}
+
+.contact-form button:hover {
+    animation: bounce 0.4s;
+}
+
+/* Map fade-in */
+.contact-map {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.8s;
+}
