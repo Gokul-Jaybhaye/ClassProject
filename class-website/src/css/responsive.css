@@ -1,0 +1,89 @@
+/* Responsive styles for classes.html and class-detail.html */
+
+/* Class List (classes.html) */
+.class-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  max-width: 700px;
+  margin: 40px auto 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.class-list li {
+  background: #f5f7fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  text-align: center;
+  padding: 24px 10px;
+  transition: box-shadow 0.2s;
+}
+
+.class-list li a {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: block;
+}
+
+.class-list li:hover {
+  box-shadow: 0 4px 16px rgba(0,123,255,0.12);
+}
+
+/* Class Detail (class-detail.html) */
+#class-info {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+}
+
+#class-info h2 {
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+#class-info h3 {
+  margin-top: 22px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+#class-info ul {
+  margin-left: 18px;
+  margin-bottom: 10px;
+}
+
+#class-info p {
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .class-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 20px 8px 0 8px;
+  }
+  #class-info {
+    padding: 16px 6px;
+    margin: 20px 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .class-list li {
+    padding: 14px 4px;
+    font-size: 1rem;
+  }
+  #class-info {
+    padding: 8px 2px;
+  }
+  #class-info h2 {
+    font-size: 1.3rem;
+  }
+}
