@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .form-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+   
+
+    /* Close button style */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      left: 180px;
+      font-size: 22px;
+      font-weight: bold;
+     
+      background: none;
+      border: none;
+      cursor: pointer;
+      justify-content: right;
+    }
+    .close-btn:hover {
+      color: red;
+    }
+
+    @media (max-width: 500px) {
+      .form-box {
+        margin: 15px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <!-- Close button -->
+    <button class="close-btn" id="closeBtn">&times;</button>
+
+    <h2>Registration / Enquiry</h2>
+    <form id="enquiryForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="3"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Firebase Script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+    // 🔑 Replace with your Firebase config
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "SENDER_ID",
+      appId: "APP_ID"
+    };
+
+    // Init Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Handle form submit
+    const form = document.getElementById("enquiryForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const message = document.getElementById("message").value;
+
+      try {
+        await addDoc(collection(db, "enquiries"), {
+          name,
+          email,
+          phone,
+          message,
+          createdAt: new Date()
+        });
+
+        alert("✅ Your enquiry has been submitted!");
+        form.reset();
+      } catch (err) {
+        console.error("Error:", err);
+        alert("❌ Something went wrong!");
+      }
+    });
+
+    // Close button → redirect home
+    document.getElementById("closeBtn").addEventListener("click", () => {
+      window.location.href = "index.html"; // change to your homepage file
+    });
+  </script>
+</body>
+</html>
